@@ -16,6 +16,7 @@ Source files and header files:
 To compile the C program, enter the following command in the terminal:
 
 gcc main.c listprimes.c linkedlist.c -o list-primes
+
 This command compiles the 3 source files main.c listprimes.c linkedlist.c and outputs a single executable list-primes.exe which can be run in terminal. The order of the 3 source files (which are used as arguments for the compiler) does not matter, as long as there is a single valid main function in one of the 3 files. To compile the program and run the program upon successful compilation, use:
 
 gcc main.c listprimes.c linkedlist.c -o list-primes && list-primes
