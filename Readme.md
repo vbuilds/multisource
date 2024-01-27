@@ -1,4 +1,5 @@
-Multiple source files in C
+Multiple source files in C:
+
 This Gist presents an introduction to a few different ways of working with multiple source files in C, including:
 
 Simple .c source files and .h header files compiled into a .exe
@@ -10,7 +11,8 @@ The concepts are demonstrated using gcc (tdm64-1) 5.1.0 on Windows 8.1, using 3 
 
 Note that the header files contain function declerations (which describe the input types, output type, and name of the function), whereas the source files contain the function definitions. In this case, the linkedlist.h header also includes a struct definition.
 
-Source files and header files
+Source files and header files:
+
 To compile the C program, enter the following command in the terminal:
 
 gcc main.c listprimes.c linkedlist.c -o list-primes
