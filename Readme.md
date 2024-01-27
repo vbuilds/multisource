@@ -24,7 +24,8 @@ Optionally, the header files can be placed in a subdirectory. For example, if th
 gcc main.c listprimes.c linkedlist.c -I ./includes -o list-primes && list-primes
 The -I flag adds the subdirectory ./includes (which can be specified as a relative or absolute path) to the search path of standard headers. This means that the #include preprocessor directives can optionally be specified with angle brackets instead of quotations (for example #include <linkedlist.h> instead of #include "linkedlist.h"); if the -I flag is used, either will work.
 
-Object files
+Object files:
+
 Using the command gcc main.c listprimes.c linkedlist.c -o list-primes will recompile every source file every time, even if a change is just being made to one source file. If a program uses many source files and some of them are very large, then this can be very slow; this is because every time the compiler is being run, it is recompiling every source file, even the source files which have not been changed since the last compile.
 
 One way to resolve this issue is to use object files, which contain object code. Under the hood, every time the compiler is being run, it first creates object code for each source file, and then it links all the object code together into a single executable file. The -c flag can be used to tell the compiler to just create an object file, but not to link anything together into an executable. That way, if just one source file is modified, it is only necessary to regenerate the object file for that one source file and then to link together all the object files into the executable, instead of generating object code for all of the source files and linking it all together, which can save a lot of time.
@@ -37,7 +38,8 @@ gcc -c linkedlist.c -I ./includes
 gcc main.o listprimes.o linkedlist.o -o list-primes
 Now, if a change is made to one source file, it is only necessary to recompile the object code for that one source file, and then to run the single linking command at the end.
 
-Makefiles
+Makefiles:
+
 Makefiles provide a way of automating the build process of programs with multiple source files; instead of manually telling the compiler to recompile the object code for each source file that has been updated since the last build, and then telling the compiler to link everything together into the executable file, a makefile can be used to automatically decide which object files to recompile by comparing the time-stamp of those object files with the source files which generate them.
 
 A makefile consists of one or more rules, and each rule consists of a target, one or more dependencies, and a command. Each rule starts off with the target, then a colon and a space, then the list of dependencies, seperated by spaces, then a new line, then a tab character (it must be a tab character and not just several spaces, otherwise the makefile won't work), then the command. Each new rule must start on a new line. Below is an example of a rule:
@@ -67,7 +69,8 @@ In order to run this makefile, save it in a file called makefile in the same dir
 
 Now, for example, after running the command mingw32-make, if a change is made only to main.c and mingw32-make is run again, the tool will automatically only rebuild the files main.o and list-primes.exe (instead of just rebuilding everything).
 
-Statically linked libraries
+Statically linked libraries:
+
 If a project requires many different object files, which might also be shared with many other projects, then it can be convenient to combine all of those object files into a library. The archive tool can be used to create an archive file (in this case called libprimes.a) which contains multiple object files as follows:
 
 ar -r libprimes.a main.o listprimes.o linkedlist.o
@@ -87,7 +90,9 @@ gcc -I ./includes -c listprimes.c
 gcc -I ./includes -c linkedlist.c
 ar -r libprimes.a listprimes.o linkedlist.o
 gcc -I ./includes main.c -L . -l primes -o list-primes
-Dynamically linked libraries
+
+Dynamically linked libraries:
+
 Instead of a static library, object files can instead be combined into a dynamic library. When the final executable is built, the object code in the dynamic library will not be compiled into the final exectubale; the final executable will be dependent on the dynamic library, and changes to the dynamic library will be reflected in the final program, without having to update the final executable.
 
 The compiler can be used to convert object code into a dynamic library using the -shared flag as follows:
