@@ -1,4 +1,5 @@
 /* Contains code to create a linked list of prime numbers. */
+/* Update from linux user */
 
 #include <stdlib.h>
 #include <math.h>
