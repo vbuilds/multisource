@@ -1,4 +1,5 @@
 /* Contains code to create and manipulate a linked list of `int`s */
+/* Update fron linux user */
 
 #include <stdio.h>
 #include <stdlib.h>
