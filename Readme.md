@@ -1,4 +1,5 @@
 Multiple source files in C:
+-------------------------
 
 This Gist presents an introduction to a few different ways of working with multiple source files in C, including:
 
