@@ -3,8 +3,8 @@
 
 #include <stdlib.h>
 #include <math.h>
-#include "linkedlist.h"
-#include "listprimes.h"
+#include <linkedlist.h>
+#include <listprimes.h>
 
 elem* first_n_primes(int n) {
     // Return a pointer to the first element in a linked list of the first n

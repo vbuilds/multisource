@@ -5,8 +5,8 @@ gcc listprimes.c linkedlist.c main.c -o list-primes && list-primes 0 100
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "linkedlist.h"
-#include "listprimes.h"
+#include <linkedlist.h>
+#include <listprimes.h>
 
 typedef enum {FIRST_N_PRIMES, PRIMES_LTE_N} mode_type;
 const int DEFAULT_MODE = FIRST_N_PRIMES; // by default, list first n primes
